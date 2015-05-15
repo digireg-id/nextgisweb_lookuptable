@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from nextgisweb.resource import Widget
+from nextgisweb.resource import Widget, Resource
 from .model import LookupTable
 
 
