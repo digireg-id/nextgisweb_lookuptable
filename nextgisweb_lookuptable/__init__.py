@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from pkg_resources import resource_filename
-from nextgisweb.component import Component, require
-
+from nextgisweb.component import Component
 from .model import Base
 
 

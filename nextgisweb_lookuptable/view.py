@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-import os.path
 
-from pyramid.response import FileResponse
-from pyramid.httpexceptions import HTTPNotFound
-
-from nextgisweb.resource import Resource, Widget, resource_factory, DataScope
-from nextgisweb.env import env
+from nextgisweb.resource import Widget
 from .model import LookupTable
 
 
