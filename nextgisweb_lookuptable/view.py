@@ -12,4 +12,8 @@ class Widget(Widget):
 
 
 def setup_pyramid(comp, config):
-    pass
+    #Регистрируем секцую
+    Resource.__psection__.register(
+       key='focl_project', priority=10,
+       is_applicable=lambda obj: isinstance(obj, LookupTable),
+       template='nextgisweb_lookuptable:/template/lookuptable_section.mako')
