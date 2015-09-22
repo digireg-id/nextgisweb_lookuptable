@@ -1,10 +1,11 @@
+<% from nextgisweb_lookuptable.util import _ %>
 <h2>Элементы справочника</h2>
 
 <table class="pure-table pure-table-bordered">
     <thead>
         <tr>
-            <th>Ключ</th>
-            <th>Значение</th>
+            <th>${tr(_("Key"))}</th>
+            <th>${tr(_("Value"))}</th>
         </tr>
     </thead>
    % for key, value in obj.val.iteritems():

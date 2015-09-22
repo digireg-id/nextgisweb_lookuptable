@@ -20,6 +20,7 @@ define([
     "dgrid/Selection",
     "dgrid/editor",
     "dgrid/extensions/DijitRegistry",
+    "ngw-pyramid/i18n!lookup_table",
     "ngw-resource/serialize",
     //
     "xstyle/css!./resource/Widget.css",
@@ -45,6 +46,7 @@ define([
     Selection,
     editor,
     DijitRegistry,
+    i18n,
     serialize
 ) {
     var GridClass = declare([Grid, Selection, DijitRegistry], {
@@ -53,7 +55,7 @@ define([
         columns: [
             editor({
                 field: "key",
-                label: "Ключ",
+                label: i18n.gettext("Key"),
                 sortable: false,
                 autoSave: true,
                 editor: TextBox,
@@ -62,14 +64,14 @@ define([
 
             {
                 field: "type",
-                label: "Тип",
+                label: i18n.gettext("Type"),
                 sortable: false,
                 formatter: function (v) { return v[0].toUpperCase() + v.slice(1) }
             },
 
             editor({
                 field: "value",
-                label: "Значение",
+                label: i18n.gettext("Value"),
                 sortable: false,
                 autoSave: true,
                 editor: TextBox,
@@ -91,7 +93,7 @@ define([
 
     return declare("ngw.lookup-table.Widget", [LayoutContainer, serialize.Mixin], {
         prefix: "lookup_table",
-        title: "Справочник",
+        title: i18n.gettext("Lookup table"),
 
         constructor: function () {
             this.store = new Observable(new Memory({idProperty: "id"}));
@@ -139,13 +141,13 @@ define([
             }));*/
 
             this.toolbar.addChild(new DropDownButton({
-                label: "Добавить",
+                label: i18n.gettext("Add"),
                 iconClass: "dijitIconNewTask",
                 dropDown: this.addMenu
             }));
 
             this.toolbar.addChild(new Button({
-                label: "Удалить",
+                label: i18n.gettext("Delete"),
                 iconClass: "dijitIconDelete",
                 onClick: lang.hitch(this, function () {
                     for (var key in this.grid.selection) {

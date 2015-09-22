@@ -14,13 +14,14 @@ from nextgisweb.resource import (
     SerializedProperty,
     ResourceGroup)
 
+from .util import _
 
 Base = declarative_base()
 
 
 class LookupTable(Base, Resource):
     identity = 'lookup_table'
-    cls_display_name = u"Справочник"
+    cls_display_name = _("Lookup table")
 
     __scope__ = DataScope
 
