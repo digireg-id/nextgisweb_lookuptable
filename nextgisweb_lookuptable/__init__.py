@@ -5,7 +5,6 @@ from nextgisweb.component import Component
 from .model import Base
 
 
-@Component.registry.register
 class LookupTableComponent(Component):
     identity = 'lookup_table'
     metadata = Base.metadata
