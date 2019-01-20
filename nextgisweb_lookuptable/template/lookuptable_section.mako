@@ -1,5 +1,5 @@
 <% from nextgisweb_lookuptable.util import _ %>
-<h2>Элементы справочника</h2>
+<h2>${tr(_("Items"))}</h2>
 
 <table class="pure-table pure-table-bordered">
     <thead>
