@@ -1,7 +1,8 @@
+import io
 from setuptools import setup, find_packages
-import sys, os
 
-version = '0.0'
+with io.open('VERSION', 'r') as fd:
+    VERSION = fd.read().rstrip()
 
 requires = (
     'nextgisweb',
@@ -20,7 +21,7 @@ entry_points = {
 
 setup(
     name='nextgisweb_lookuptable',
-    version=version,
+    version=VERSION,
     description="",
     long_description="",
     classifiers=[],
